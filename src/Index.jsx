@@ -5,6 +5,7 @@ import './styles/index.css'
 import Home from './pages/Home/'
 import Survey from './pages/Survey/'
 import Header from './components/Header'
+import Error from './components/Error'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/survey" element={<Survey />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   </StrictMode>,
