@@ -1,5 +1,4 @@
 function Home() {
-
   return <p>Page Home</p>
 }
 
