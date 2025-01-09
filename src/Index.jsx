@@ -3,9 +3,11 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './styles/index.css'
 import Home from './pages/Home/'
-import Survey from './pages/Survey/'
+import Fiche from './pages/Fiche'
+import Infos from './pages/Infos'
 import Header from './components/Header'
 import Error from './components/Error'
+import Footer from './components/Footer'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,9 +15,11 @@ createRoot(document.getElementById('root')).render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey" element={<Survey />} />
+        <Route path="/Fiche" element={<Fiche />} />
+        <Route path="/Infos" element={<Infos />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <Footer />
     </Router>
   </StrictMode>,
 )

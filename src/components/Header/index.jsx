@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom'
+import LogoR from '../../assets/LogoR.png'
 
 function Header() {
   return (
-    <nav>
-      <Link to="/">Accueil</Link>
-      <Link to="/survey">Questionnaire</Link>
-    </nav>
+    <div>
+      <img src={LogoR} alt="Logo Kasa Rouge"></img>
+      <nav>
+        <Link to="/">Accueil</Link>
+        <Link to="/Infos">A Propos</Link>
+        <Link to="/Fiche">Fiche</Link>
+      </nav>
+    </div>
   )
 }
 
