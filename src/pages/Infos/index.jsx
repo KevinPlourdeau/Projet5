@@ -1,8 +1,8 @@
 function Infos() {
   return (
-    <div>
+    <section className="main">
       <h1>A Propos 🧮</h1>
-    </div>
+    </section>
   )
 }
 

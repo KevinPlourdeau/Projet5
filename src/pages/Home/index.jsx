@@ -1,5 +1,8 @@
 function Home() {
-  return <h1>Chez vous, partout et ailleurs</h1>
+  return (
+    <section className="main">
+      <h1>Chez vous, partout et ailleurs</h1>
+    </section>
+  )
 }
-
 export default Home

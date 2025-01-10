@@ -1,8 +1,8 @@
 function Fiche() {
   return (
-    <div>
+    <section className="main">
       <h1>Fiche Logement 🧮</h1>
-    </div>
+    </section>
   )
 }
 
