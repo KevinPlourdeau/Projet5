@@ -1,23 +1,21 @@
-import data from '../../datas/logements.json'
+import data from '@datas/logements.json'
 
 function Home() {
   return (
     <section className="main">
-      <div className="main__container1">
-        <h1 className="main__container1__title">
-          Chez vous, partout et ailleurs
-        </h1>
+      <div className="main__home1">
+        <h1 className="main__home1__title">Chez vous, partout et ailleurs</h1>
       </div>
-      <div className="main__container2">
+      <div className="main__home2">
         {data.map((item) => (
-          <div key={item.id} className="main__container2__card">
+          <div key={item.id} className="main__home2__card">
             <img
               src={item.cover}
               alt={item.title}
-              className="main__container2__card__image"
+              className="main__home2__card__image"
             />
-            <div className="main__container2__card__overlay">
-              <h2 className="main__container2__card__overlay__title">
+            <div className="main__home2__card__overlay">
+              <h2 className="main__home2__card__overlay__title">
                 {item.title}
               </h2>
             </div>
