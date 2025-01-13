@@ -1,0 +1,27 @@
+// mixin placé dans home.scss
+@mixin title-shadow {
+  text-shadow:
+    1px 1px 0px black,
+    // Ombre en bas à droite
+    -1px 1px 0px black,
+    // Ombre en bas à gauche
+    1px -1px 0px black,
+    // Ombre en haut à droite
+    -1px -1px 0px black,
+    // Ombre en haut à gauche
+    0px 1px 0px black,
+    // Ombre en bas
+    0px -1px 0px black,
+    // Ombre en haut
+    1px 0px 0px black,
+    // Ombre à droite
+    -1px 0px 0px black; // Ombre à gauche
+}
+
+@mixin background-image-darken($image, $color: black, $opacity) {
+  background: linear-gradient(rgba($color, $opacity), rgba($color, $opacity)),
+    url($image);
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+}
