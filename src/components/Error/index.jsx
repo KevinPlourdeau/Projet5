@@ -5,10 +5,24 @@ import quatrecentquatreM from '@assets/404M.png'
 function Error() {
   return (
     <section className="main">
-      <img src={quatrecentquatreD}></img>
-      <img src={quatrecentquatreM}></img>
-      <p>Oups! La page que vous demandez n&apos;existe pas.</p>
-      <Link to="/">Retourner sur la page d&apos;accueil</Link>
+      <div className="main__error">
+        <img
+          className="main__error__quatrecentquatreD"
+          src={quatrecentquatreD}
+          alt="404 Red"
+        ></img>
+        <img
+          className="main__error__quatrecentquatreM"
+          src={quatrecentquatreM}
+          alt="404 Red"
+        ></img>
+        <p className="main__error__text">
+          Oups! La page que vous demandez n&apos;existe pas.
+        </p>
+        <Link className="main__error__link" to="/">
+          Retourner sur la page d&apos;accueil
+        </Link>
+      </div>
     </section>
   )
 }

@@ -1,1 +1,22 @@
 @use '@styles/Utils/utils' as utils;
+
+.main {
+  &__error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 139px;
+    margin: 89px 0px;
+    &__quatrecentquatreM {
+      display: none;
+    }
+    &__text {
+      color: #ff6060;
+      font-size: 36px;
+    }
+    &__link {
+      color: black;
+    }
+  }
+}
