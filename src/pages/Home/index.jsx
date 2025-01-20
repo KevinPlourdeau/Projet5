@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import data from '@datas/logements.json'
 
 function Home() {
@@ -8,7 +9,11 @@ function Home() {
       </div>
       <div className="main__home2">
         {data.map((item) => (
-          <div key={item.id} className="main__home2__card">
+          <Link
+            key={item.id}
+            to={`/Fiche/${item.id}`}
+            className="main__home2__card"
+          >
             <img
               src={item.cover}
               alt={item.title}
@@ -19,7 +24,7 @@ function Home() {
                 {item.title}
               </h2>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

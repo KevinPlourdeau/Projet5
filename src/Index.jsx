@@ -14,10 +14,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Router>
       <Header />
-
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Fiche" element={<Fiche />} />
+        <Route path="/Fiche/:id" element={<Fiche />} />
         <Route path="/Infos" element={<Infos />} />
         <Route path="*" element={<Error />} />
       </Routes>
