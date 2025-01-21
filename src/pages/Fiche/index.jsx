@@ -1,3 +1,5 @@
+import ChevronR from '@assets/ChevronR.png'
+import ChevronL from '@assets/ChevronL.png'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import logements from '@datas/logements.json'
@@ -56,13 +58,21 @@ function Fiche() {
                 className="main__accomodation__carousel__prev"
                 onClick={prevImage}
               >
-                <i className="fas fa-chevron-left"></i>
+                <img
+                  className="Chevron Left"
+                  src={ChevronL}
+                  alt="Chevron Left"
+                ></img>
               </button>
               <button
                 className="main__accomodation__carousel__next"
                 onClick={nextImage}
               >
-                <i className="fas fa-chevron-right"></i>
+                <img
+                  className="Chevron Right"
+                  src={ChevronR}
+                  alt="Chevron Right"
+                ></img>
               </button>
             </>
           )}
@@ -103,7 +113,7 @@ function Fiche() {
                       : 'star empty'
                   }
                 >
-                  {index < parseInt(logement.rating) ? '★' : '★'}{' '}
+                  {index < parseInt(logement.rating) ? '★' : '★'}
                   {/* ☆ = test sans couleur */}
                 </span>
               ))}

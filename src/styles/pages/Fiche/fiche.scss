@@ -33,11 +33,11 @@
     }
 
     &__prev {
-      left: 20px;
+      left: 15px;
     }
 
     &__next {
-      right: 20px;
+      right: 15px;
     }
   }
 
@@ -127,6 +127,7 @@
 
         i {
           font-size: 30px;
+          padding-right: 10px;
         }
       }
 

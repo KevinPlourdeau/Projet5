@@ -2,7 +2,11 @@
 .main {
   &__apropos1 {
     height: 223px;
-    @include utils.background-image-darken('@assets/Apropos.png', black, 0.3);
+    @include utils.background-image-darken(
+      '@assets/Apropos.png',
+      utils.$black-color,
+      0.3
+    );
     border-radius: 25px;
     margin-bottom: 38px;
   }
@@ -15,10 +19,15 @@
       &__title {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         background: #ff6060;
         color: #ffffff;
         padding: 10px;
         border-radius: 5px;
+
+        i {
+          padding-right: 10px;
+        }
       }
       &__content {
         padding: 15px;
