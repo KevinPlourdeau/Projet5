@@ -1,1 +1,140 @@
 @use '@styles/Utils/utils' as utils;
+
+.main__accomodation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 415px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &__image {
+      width: 100%;
+      border-radius: 25px;
+      object-fit: cover;
+    }
+
+    &__prev,
+    &__next {
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 100px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    &__prev {
+      left: 20px;
+    }
+
+    &__next {
+      right: 20px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__tlt {
+      &__title {
+        font-size: 36px;
+        font-weight: 500;
+        color: utils.$primary-color;
+        margin-top: 30px;
+      }
+
+      &__location {
+        font-size: 18px;
+        color: black;
+        font-weight: 500;
+      }
+      &__tags {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+
+        .tag {
+          background: utils.$primary-color;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__ht {
+      &__host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: utils.$primary-color;
+        margin-top: 24px;
+
+        img {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      &__rating {
+        display: flex;
+        gap: 5px;
+        margin-top: 21px;
+        color: utils.$primary-color;
+        font-size: 36px;
+
+        .empty {
+          color: #e3e3e3;
+        }
+      }
+    }
+  }
+
+  &__de {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &__block {
+      flex: 1;
+
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background: utils.$primary-color;
+        color: utils.$white-color;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+
+        i {
+          font-size: 30px;
+        }
+      }
+
+      &__content {
+        padding: 15px;
+        background-color: utils.$content-color;
+        border-radius: 5px;
+      }
+    }
+  }
+}
