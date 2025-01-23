@@ -20,6 +20,13 @@
       border-radius: 25px;
       object-fit: cover;
     }
+    &__counter {
+      position: absolute;
+      bottom: 20px;
+      color: utils.$white-color;
+      font-size: 18px;
+      font-weight: 500;
+    }
 
     &__prev,
     &__next {

@@ -28,7 +28,6 @@ function Fiche() {
     )
   }
 
-  // Fonction pour afficher l'image précédente
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1,
@@ -52,6 +51,9 @@ function Fiche() {
             alt={`Photo ${currentImageIndex + 1} de ${logement.title}`}
             className="main__accomodation__carousel__image"
           />
+          <div className="main__accomodation__carousel__counter">
+            {currentImageIndex + 1}/{logement.pictures.length}
+          </div>
           {logement.pictures.length > 1 && (
             <>
               <button
