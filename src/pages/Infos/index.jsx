@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import aboutList from '@datas/apropos.jsx'
+import aboutList from '@datas/apropos'
 import ToggleSection from '@components/ToggleSection'
 
 function Infos() {
-  const [activeIndices, setActiveIndices] = useState([])
+  const [activeIndex, setActiveIndex] = useState([])
 
   const toggleContent = (index) => {
-    setActiveIndices((prevIndices) =>
-      prevIndices.includes(index)
-        ? prevIndices.filter((i) => i !== index)
-        : [...prevIndices, index],
+    setActiveIndex((prevIndex) =>
+      prevIndex.includes(index)
+        ? prevIndex.filter((i) => i !== index)
+        : [...prevIndex, index],
     )
   }
 
@@ -21,7 +21,7 @@ function Infos() {
           <ToggleSection
             key={index}
             title={item.title}
-            isActive={activeIndices.includes(index)}
+            isActive={activeIndex.includes(index)}
             onToggle={() => toggleContent(index)}
           >
             <p>{item.content}</p>

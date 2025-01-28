@@ -7,10 +7,9 @@ function ToggleSection({ title, children, isActive, onToggle }) {
         className={`toggle-section__item__title ${
           isActive ? 'rotate-left' : 'rotate-right'
         }`}
-        onClick={onToggle}
       >
         {title}
-        <i className="fa-solid fa-chevron-up"></i>
+        <i onClick={onToggle} className="fa-solid fa-chevron-up"></i>
       </h3>
       <div
         className={`toggle-section__item__content-wrapper ${

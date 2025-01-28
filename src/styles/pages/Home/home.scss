@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    margin-bottom: 43px;
+    margin-bottom: 38px;
     &__title {
       color: white;
       font-weight: 700;
@@ -29,7 +29,7 @@
     border-radius: 25px;
     padding: 56px 50px 43px 50px;
     &__card {
-      position: relative; // Nécessaire pour placer le texte sur l'image
+      position: relative;
       border-radius: 10px;
       overflow: hidden;
       height: 340px;

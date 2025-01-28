@@ -10,7 +10,7 @@ function Fiche() {
   const navigate = useNavigate()
   const [logement, setLogement] = useState(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [activeSections, setActiveSections] = useState([])
+  const [activeIndex, setActiveIndex] = useState([])
 
   useEffect(() => {
     const foundLogement = logements.find((item) => item.id === id)
@@ -35,11 +35,11 @@ function Fiche() {
     )
   }
 
-  const toggleSection = (section) => {
-    setActiveSections((prevSections) =>
-      prevSections.includes(section)
-        ? prevSections.filter((s) => s !== section)
-        : [...prevSections, section],
+  const toggleSection = (Index) => {
+    setActiveIndex((prevIndex) =>
+      prevIndex.includes(Index)
+        ? prevIndex.filter((s) => s !== Index)
+        : [...prevIndex, Index],
     )
   }
 
@@ -52,11 +52,12 @@ function Fiche() {
             alt={`Photo ${currentImageIndex + 1} de ${logement.title}`}
             className="main__accomodation__carousel__image"
           />
-          <div className="main__accomodation__carousel__counter">
-            {currentImageIndex + 1}/{logement.pictures.length}
-          </div>
+
           {logement.pictures.length > 1 && (
             <>
+              <div className="main__accomodation__carousel__counter">
+                {currentImageIndex + 1}/{logement.pictures.length}
+              </div>
               <button
                 className="main__accomodation__carousel__prev"
                 onClick={prevImage}
@@ -128,7 +129,7 @@ function Fiche() {
           <div className="main__accomodation__toggle__block">
             <ToggleSection
               title="Description"
-              isActive={activeSections.includes('description')}
+              isActive={activeIndex.includes('description')}
               onToggle={() => toggleSection('description')}
             >
               <p>{logement.description}</p>
@@ -137,7 +138,7 @@ function Fiche() {
           <div className="main__accomodation__toggle__block">
             <ToggleSection
               title="Équipements"
-              isActive={activeSections.includes('equipment')}
+              isActive={activeIndex.includes('equipment')}
               onToggle={() => toggleSection('equipment')}
             >
               <ul>
