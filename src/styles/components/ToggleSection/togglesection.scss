@@ -1,0 +1,38 @@
+@use '@styles/Utils/utils';
+
+.toggle-section {
+  &__item {
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: utils.$primary-color;
+      color: utils.$white-color;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      i {
+        font-size: 32px;
+        cursor: pointer;
+        display: inline-block;
+        transition: transform 0.5s ease;
+        padding: 0 15px;
+      }
+
+      &.rotate-left i {
+        transform: rotate(-180deg);
+      }
+
+      &.rotate-right i {
+        transform: rotate(0deg);
+      }
+    }
+
+    &__content {
+      padding: 15px;
+      background-color: utils.$content-color;
+      border-radius: 5px;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import ChevronL from '@assets/ChevronL.png'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import logements from '@datas/logements.json'
+import ToggleSection from '@components/ToggleSection'
 
 function Fiche() {
   const { id } = useParams()
@@ -35,11 +36,11 @@ function Fiche() {
   }
 
   const toggleSection = (section) => {
-    if (activeSections.includes(section)) {
-      setActiveSections(activeSections.filter((s) => s !== section))
-    } else {
-      setActiveSections([...activeSections, section])
-    }
+    setActiveSections((prevSections) =>
+      prevSections.includes(section)
+        ? prevSections.filter((s) => s !== section)
+        : [...prevSections, section],
+    )
   }
 
   return (
@@ -123,41 +124,28 @@ function Fiche() {
           </div>
         </div>
 
-        {/* Section pliable pour la description */}
-        <div className="main__accomodation__de">
-          <div className="main__accomodation__de__block">
-            <h3 className="main__accomodation__de__block__title">
-              Description
-              <i
-                onClick={() => toggleSection('description')}
-                className={`fa-solid ${activeSections.includes('description') ? 'fa-chevron-down' : 'fa-chevron-up'}`}
-              ></i>
-            </h3>
-            {activeSections.includes('description') && (
-              <div className="main__accomodation__de__block__content">
-                <p>{logement.description}</p>
-              </div>
-            )}
+        <div className="main__accomodation__toggle">
+          <div className="main__accomodation__toggle__block">
+            <ToggleSection
+              title="Description"
+              isActive={activeSections.includes('description')}
+              onToggle={() => toggleSection('description')}
+            >
+              <p>{logement.description}</p>
+            </ToggleSection>
           </div>
-
-          {/* Section pliable pour les équipements */}
-          <div className="main__accomodation__de__block">
-            <h3 className="main__accomodation__de__block__title">
-              Équipements
-              <i
-                onClick={() => toggleSection('equipment')}
-                className={`fa-solid ${activeSections.includes('equipment') ? 'fa-chevron-down' : 'fa-chevron-up'}`}
-              ></i>
-            </h3>
-            {activeSections.includes('equipment') && (
-              <div className="main__accomodation__de__block__content">
-                <ul>
-                  {logement.equipments.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          <div className="main__accomodation__toggle__block">
+            <ToggleSection
+              title="Équipements"
+              isActive={activeSections.includes('equipment')}
+              onToggle={() => toggleSection('equipment')}
+            >
+              <ul>
+                {logement.equipments.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </ToggleSection>
           </div>
         </div>
       </div>

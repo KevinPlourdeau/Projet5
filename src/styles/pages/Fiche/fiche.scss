@@ -110,7 +110,7 @@
     }
   }
 
-  &__de {
+  &__toggle {
     display: flex;
     flex-direction: row;
     gap: 76px;
@@ -119,30 +119,6 @@
 
     &__block {
       flex: 1;
-
-      &__title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        background: utils.$primary-color;
-        color: utils.$white-color;
-        padding: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        border-radius: 5px;
-
-        i {
-          font-size: 30px;
-          padding-right: 10px;
-        }
-      }
-
-      &__content {
-        padding: 15px;
-        background-color: utils.$content-color;
-        border-radius: 5px;
-      }
     }
   }
 }

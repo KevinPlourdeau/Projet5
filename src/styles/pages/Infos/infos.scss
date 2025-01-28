@@ -15,24 +15,5 @@
     flex-direction: column;
     gap: 30px;
     margin: 0 100px;
-    &__item {
-      &__title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #ff6060;
-        color: #ffffff;
-        padding: 10px;
-        border-radius: 5px;
-
-        i {
-          padding-right: 10px;
-        }
-      }
-      &__content {
-        padding: 15px;
-        background-color: #f6f6f673;
-      }
-    }
   }
 }

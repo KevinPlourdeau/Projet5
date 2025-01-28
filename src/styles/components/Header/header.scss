@@ -6,17 +6,32 @@
   justify-content: space-between;
   align-items: center;
   margin: 45px 100px 0 100px;
+
   &__logoRL {
     display: none;
   }
+
   &__nav {
     display: flex;
     gap: 57px;
+
     &__link {
+      position: relative;
       margin-left: 57px;
-    }
-    &__link--fontsize {
-      font-size: 24px;
+      text-decoration: none;
+      color: utils.$black-color;
+
+      &--fontsize {
+        font-size: 24px;
+      }
+
+      &:hover {
+        color: utils.$primary-color;
+      }
+
+      &--active {
+        text-decoration: underline;
+      }
     }
   }
 }

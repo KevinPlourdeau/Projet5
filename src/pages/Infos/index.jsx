@@ -1,17 +1,16 @@
 import { useState } from 'react'
 import aboutList from '@datas/apropos.jsx'
+import ToggleSection from '@components/ToggleSection'
 
 function Infos() {
-  const [activeIndices, setActiveIndices] = useState([]) // Stocke les indices des éléments ouverts
+  const [activeIndices, setActiveIndices] = useState([])
 
   const toggleContent = (index) => {
-    if (activeIndices.includes(index)) {
-      // Si l'index est déjà actif, on le retire
-      setActiveIndices(activeIndices.filter((i) => i !== index))
-    } else {
-      // Sinon, on l'ajoute
-      setActiveIndices([...activeIndices, index])
-    }
+    setActiveIndices((prevIndices) =>
+      prevIndices.includes(index)
+        ? prevIndices.filter((i) => i !== index)
+        : [...prevIndices, index],
+    )
   }
 
   return (
@@ -19,20 +18,14 @@ function Infos() {
       <div className="main__apropos1"></div>
       <div className="main__apropos2">
         {aboutList.map((item, index) => (
-          <div key={index} className="main__apropos2__item">
-            <h3 className="main__apropos2__item__title">
-              {item.title}{' '}
-              <i
-                onClick={() => toggleContent(index)}
-                className={`fa-solid ${activeIndices.includes(index) ? 'fa-chevron-down' : 'fa-chevron-up'}`}
-              ></i>
-            </h3>
-            {activeIndices.includes(index) && (
-              <div className="main__apropos2__item__content">
-                <p>{item.content}</p>
-              </div>
-            )}
-          </div>
+          <ToggleSection
+            key={index}
+            title={item.title}
+            isActive={activeIndices.includes(index)}
+            onToggle={() => toggleContent(index)}
+          >
+            <p>{item.content}</p>
+          </ToggleSection>
         ))}
       </div>
     </section>

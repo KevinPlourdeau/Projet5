@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import LogoR from '@assets/LogoR.png'
 import LogoRL from '@assets/LogoRL.png'
 
@@ -16,12 +16,26 @@ function Header() {
         alt="Logo Kasa Rouge mobile"
       ></img>
       <nav className="header__nav">
-        <Link to="/" className="header__nav__link header__nav__link--fontsize">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? 'header__nav__link header__nav__link--active header__nav__link--fontsize'
+              : 'header__nav__link header__nav__link--fontsize'
+          }
+        >
           Accueil
-        </Link>
-        <Link to="/Infos" className="header__nav__link--fontsize">
+        </NavLink>
+        <NavLink
+          to="/Infos"
+          className={({ isActive }) =>
+            isActive
+              ? 'header__nav__link header__nav__link--active header__nav__link--fontsize'
+              : 'header__nav__link header__nav__link--fontsize'
+          }
+        >
           A Propos
-        </Link>
+        </NavLink>
       </nav>
     </section>
   )
