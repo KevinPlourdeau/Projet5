@@ -12,9 +12,13 @@ function ToggleSection({ title, children, isActive, onToggle }) {
         {title}
         <i className="fa-solid fa-chevron-up"></i>
       </h3>
-      {isActive && (
+      <div
+        className={`toggle-section__item__content-wrapper ${
+          isActive ? 'toggle-section__item__content-wrapper--active' : ''
+        }`}
+      >
         <div className="toggle-section__item__content">{children}</div>
-      )}
+      </div>
     </div>
   )
 }

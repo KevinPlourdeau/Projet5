@@ -10,7 +10,6 @@
       color: utils.$white-color;
       padding: 10px;
       border-radius: 5px;
-      cursor: pointer;
 
       i {
         font-size: 32px;
@@ -33,6 +32,20 @@
       padding: 15px;
       background-color: utils.$content-color;
       border-radius: 5px;
+    }
+
+    &__content-wrapper {
+      max-height: 0;
+      transform-origin: top;
+      transform: scaleY(0);
+      overflow: hidden;
+      transition:
+        transform 0.3s ease,
+        max-height 0.3s ease;
+      &--active {
+        transform: scaleY(1);
+        max-height: 500px;
+      }
     }
   }
 }

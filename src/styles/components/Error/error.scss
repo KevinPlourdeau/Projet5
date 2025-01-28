@@ -8,15 +8,20 @@
     align-items: center;
     gap: 139px;
     margin: 89px 0px;
-    &__quatrecentquatreM {
-      display: none;
+    &__404 {
+      color: utils.$primary-color;
+      font-size: 200px;
     }
     &__text {
-      color: #ff6060;
+      color: utils.$primary-color;
       font-size: 36px;
     }
     &__link {
       color: black;
+
+      &:hover {
+        color: utils.$primary-color;
+      }
     }
   }
 }
