@@ -15,11 +15,26 @@
     align-items: center;
     border-radius: 25px;
     margin-bottom: 38px;
+
+    @media (max-width: 1024px) {
+      height: 167px;
+    }
+    @media (max-width: 720px) {
+      margin-bottom: 22px;
+      height: 111px;
+    }
     &__title {
       padding: 16px;
       color: white;
       font-weight: 700;
       @include utils.title-shadow;
+
+      @media (max-width: 1024px) {
+        font-size: 36px;
+      }
+      @media (max-width: 720px) {
+        font-size: 24px;
+      }
     }
   }
   &__home2 {
@@ -29,11 +44,29 @@
     background-color: #f6f6f6;
     border-radius: 25px;
     padding: 56px 50px 43px 50px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+      padding: 36px 30px 25px 30px;
+    }
+    @media (max-width: 720px) {
+      grid-template-columns: repeat(1, 1fr);
+      background-color: transparent;
+      padding: 0;
+      gap: 20px;
+    }
     &__card {
       position: relative;
       border-radius: 10px;
       overflow: hidden;
       height: 340px;
+
+      @media (max-width: 1024px) {
+      }
+      @media (max-width: 720px) {
+        height: 255px;
+      }
       &__image {
         width: 100%;
         height: 100%;
