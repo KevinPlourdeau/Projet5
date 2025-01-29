@@ -86,7 +86,7 @@ function Fiche() {
           {/* Section titre + location + tags */}
           <div className="main__accomodation__block__tlt">
             <div className="main__accomodation__block__tlt__title">
-              <h1>{logement.title}</h1>
+              <h2>{logement.title}</h2>
             </div>
             <div className="main__accomodation__block__tlt__location">
               <p>{logement.location}</p>

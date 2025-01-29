@@ -15,8 +15,16 @@
     border-radius: 10px;
     overflow: hidden;
 
+    @media (max-width: 1024px) {
+      height: 335px;
+    }
+    @media (max-width: 720px) {
+      height: 255px;
+    }
+
     &__image {
       width: 100%;
+      height: 100%;
       border-radius: 25px;
       object-fit: cover;
     }
@@ -26,6 +34,10 @@
       color: utils.$white-color;
       font-size: 18px;
       font-weight: 500;
+
+      @media (max-width: 720px) {
+        display: none;
+      }
     }
 
     &__prev,
@@ -34,41 +46,94 @@
       background-color: transparent;
       border: none;
       color: white;
-      font-size: 100px;
       cursor: pointer;
       padding: 10px;
+      img {
+        @media (max-width: 1024px) {
+          width: 35px;
+          height: 60px;
+        }
+        @media (max-width: 720px) {
+          width: 11px;
+          height: 20px;
+        }
+      }
     }
 
     &__prev {
-      left: 15px;
+      left: 23px;
+      @media (max-width: 1024px) {
+        left: 14px;
+      }
+      @media (max-width: 720px) {
+        left: 6px;
+      }
     }
 
     &__next {
-      right: 15px;
+      right: 23px;
+      @media (max-width: 1024px) {
+        right: 14px;
+      }
+      @media (max-width: 720px) {
+        right: 6px;
+      }
     }
   }
 
   &__block {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      align-items: normal;
+    }
     &__tlt {
       &__title {
-        font-size: 36px;
-        font-weight: 500;
         color: utils.$primary-color;
         margin-top: 30px;
-      }
 
+        @media (max-width: 720px) {
+          margin-top: 15px;
+        }
+        h2 {
+          font-weight: 500;
+          @media (max-width: 1024px) {
+            font-size: 27px;
+          }
+          @media (max-width: 720px) {
+            font-size: 18px;
+          }
+        }
+      }
       &__location {
         font-size: 18px;
         color: black;
-        font-weight: 500;
+        p {
+          font-weight: 500;
+
+          @media (max-width: 1024px) {
+            margin-top: 2px;
+            font-size: 16px;
+          }
+          @media (max-width: 720px) {
+            margin-top: 5px;
+            font-size: 14px;
+          }
+        }
       }
+
       &__tags {
         display: flex;
         gap: 10px;
         margin-top: 20px;
+
+        @media (max-width: 720px) {
+          margin-top: 10px;
+        }
 
         .tag {
           background: utils.$primary-color;
@@ -76,18 +141,42 @@
           padding: 5px 15px;
           border-radius: 20px;
           font-size: 14px;
+          font-weight: 700;
+
+          @media (max-width: 720px) {
+            font-size: 10px;
+          }
         }
       }
     }
 
     &__ht {
+      width: 167px;
+
+      @media (max-width: 720px) {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+      }
       &__host {
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 10px;
         color: utils.$primary-color;
         margin-top: 24px;
 
+        @media (max-width: 720px) {
+          margin-top: 15px;
+        }
+
+        p {
+          font-weight: 500;
+          text-align: right;
+          width: 100px;
+        }
         img {
           width: 64px;
           height: 64px;
@@ -98,10 +187,22 @@
 
       &__rating {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         gap: 5px;
         margin-top: 21px;
         color: utils.$primary-color;
         font-size: 36px;
+
+        @media (max-width: 1024px) {
+          font-size: 30px;
+          gap: 4px;
+        }
+        @media (max-width: 720px) {
+          font-size: 18px;
+          gap: 2px;
+        }
 
         .empty {
           color: #e3e3e3;
@@ -116,6 +217,11 @@
     gap: 76px;
     justify-content: space-between;
     margin-top: 24px;
+
+    @media (max-width: 720px) {
+      flex-direction: column;
+      gap: 20px;
+    }
 
     &__block {
       flex: 1;
