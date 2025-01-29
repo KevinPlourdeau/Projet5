@@ -141,6 +141,13 @@ body,
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: 1024px) {
+    gap: 38px;
+  }
+  @media (max-width: 720px) {
+    gap: 27px;
+  }
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -160,8 +167,12 @@ h3 {
 .main {
   flex: 1;
   margin: 0 100px;
-}
 
-/* Responsive */
-@media (max-width: 375px) {
+  @media (max-width: 1024px) {
+    margin: 0 50px;
+  }
+  @media (max-width: 720px) {
+    flex: 0;
+    margin: 0 20px;
+  }
 }

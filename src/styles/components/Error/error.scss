@@ -8,17 +8,46 @@
     align-items: center;
     gap: 139px;
     margin: 89px 0px;
+    @media (max-width: 1024px) {
+      margin: 99px 0;
+      gap: 126px;
+    }
+    @media (max-width: 720px) {
+      gap: 113px;
+      margin: 86px 0;
+    }
     &__404 {
       color: utils.$primary-color;
       font-size: 288px;
       font-weight: 700;
+      @media (max-width: 1024px) {
+        font-size: 192px;
+      }
+      @media (max-width: 720px) {
+        font-size: 96px;
+      }
     }
     &__text {
+      text-align: center;
       color: utils.$primary-color;
       font-size: 36px;
+      font-weight: 500;
+      @media (max-width: 1024px) {
+        font-size: 27px;
+      }
+      @media (max-width: 720px) {
+        font-size: 18px;
+      }
     }
     &__link {
+      font-weight: 500;
       color: black;
+      @media (max-width: 1024px) {
+        font-size: 16px;
+      }
+      @media (max-width: 720px) {
+        font-size: 14px;
+      }
 
       &:hover {
         color: utils.$primary-color;

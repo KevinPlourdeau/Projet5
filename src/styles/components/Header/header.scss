@@ -16,13 +16,12 @@
     gap: 57px;
 
     &__link {
-      position: relative;
-      margin-left: 57px;
       text-decoration: none;
       color: utils.$black-color;
 
       &--fontsize {
         font-size: 24px;
+        font-weight: 500;
       }
 
       &:hover {
@@ -36,9 +35,23 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 1024px) {
+  .header {
+    margin: 32px 50px 0 50px;
+    &__nav {
+      gap: 36px;
+
+      &__link--fontsize {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
   .header {
     margin: 20px 20px 0 20px;
+    gap: 43px;
     &__logoR {
       display: none;
     }
@@ -47,9 +60,7 @@
     }
     &__nav {
       gap: 26px;
-      &__link {
-        margin-left: 43px;
-      }
+
       &__link--fontsize {
         font-size: 12px;
       }

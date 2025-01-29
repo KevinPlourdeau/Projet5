@@ -15,5 +15,14 @@
     flex-direction: column;
     gap: 30px;
     margin: 0 100px;
+
+    @media (max-width: 1024px) {
+      gap: 25px;
+      margin: 0 50px;
+    }
+    @media (max-width: 720px) {
+      gap: 20px;
+      margin: 0 0px;
+    }
   }
 }
