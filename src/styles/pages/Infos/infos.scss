@@ -1,7 +1,11 @@
 @use '@styles/Utils/utils' as utils;
 .main {
   &__apropos1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 223px;
+    width: 100%;
     @include utils.background-image-darken(
       '@assets/Apropos.png',
       utils.$black-color,
@@ -9,6 +13,14 @@
     );
     border-radius: 25px;
     margin-bottom: 38px;
+
+    @media (max-width: 1024px) {
+      height: 167px;
+    }
+    @media (max-width: 720px) {
+      margin-bottom: 22px;
+      height: 111px;
+    }
   }
   &__apropos2 {
     display: flex;
