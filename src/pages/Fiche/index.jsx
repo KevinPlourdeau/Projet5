@@ -1,13 +1,12 @@
 import ChevronR from '@assets/ChevronR.png'
 import ChevronL from '@assets/ChevronL.png'
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import logements from '@datas/logements.json'
 import ToggleSection from '@components/ToggleSection'
 
 function Fiche() {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [logement, setLogement] = useState(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [activeIndex, setActiveIndex] = useState([])
@@ -17,7 +16,7 @@ function Fiche() {
     if (foundLogement) {
       setLogement(foundLogement)
     }
-  }, [id, navigate])
+  }, [id])
 
   if (!logement) {
     return <div className="loading">Chargement...</div>

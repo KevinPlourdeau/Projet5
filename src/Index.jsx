@@ -6,8 +6,9 @@ import Home from '@pages/Home/'
 import Fiche from '@pages/Fiche'
 import Infos from '@pages/Infos'
 import Header from '@components/Header'
-import Error from '@components/Error'
 import Footer from '@components/Footer'
+//import Layout from '@components/Layout'
+import Error from '@components/Error'
 import '@styles/styles.scss'
 
 createRoot(document.getElementById('root')).render(
