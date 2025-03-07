@@ -1,96 +1,53 @@
-import ChevronR from '@assets/ChevronR.png'
-import ChevronL from '@assets/ChevronL.png'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import logements from '@datas/logements.json'
 import ToggleSection from '@components/ToggleSection'
+import Slideshow from '@components/Slideshow'
 
 function Fiche() {
   const { id } = useParams()
+  const navigate = useNavigate()
   const [logement, setLogement] = useState(null)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [activeIndex, setActiveIndex] = useState([])
 
   useEffect(() => {
     const foundLogement = logements.find((item) => item.id === id)
     if (foundLogement) {
       setLogement(foundLogement)
+    } else {
+      navigate('/error')
     }
-  }, [id])
+  }, [id, navigate])
 
   if (!logement) {
     return <div className="loading">Chargement...</div>
   }
 
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === logement.pictures.length - 1 ? 0 : prevIndex + 1,
-    )
-  }
-
-  const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1,
-    )
-  }
-
-  const toggleSection = (Index) => {
+  const toggleSection = (index) => {
     setActiveIndex((prevIndex) =>
-      prevIndex.includes(Index)
-        ? prevIndex.filter((s) => s !== Index)
-        : [...prevIndex, Index],
+      prevIndex.includes(index)
+        ? prevIndex.filter((s) => s !== index)
+        : [...prevIndex, index],
     )
   }
 
   return (
     <section className="main">
       <div className="main__accomodation">
-        <div className="main__accomodation__carousel">
-          <img
-            src={logement.pictures[currentImageIndex]}
-            alt={`Photo ${currentImageIndex + 1} de ${logement.title}`}
-            className="main__accomodation__carousel__image"
-          />
+        {/* Slideshow Component */}
+        <Slideshow pictures={logement.pictures} title={logement.title} />
 
-          {logement.pictures.length > 1 && (
-            <>
-              <div className="main__accomodation__carousel__counter">
-                {currentImageIndex + 1}/{logement.pictures.length}
-              </div>
-              <button
-                className="main__accomodation__carousel__prev"
-                onClick={prevImage}
-              >
-                <img
-                  className="Chevron Left"
-                  src={ChevronL}
-                  alt="Chevron Left"
-                ></img>
-              </button>
-              <button
-                className="main__accomodation__carousel__next"
-                onClick={nextImage}
-              >
-                <img
-                  className="Chevron Right"
-                  src={ChevronR}
-                  alt="Chevron Right"
-                ></img>
-              </button>
-            </>
-          )}
-        </div>
         {/* Block titre/location + host/rating */}
         <div className="main__accomodation__block">
           {/* Section titre + location + tags */}
           <div className="main__accomodation__block__tlt">
-            <div className="main__accomodation__block__tlt__title">
-              <h2>{logement.title}</h2>
-            </div>
-            <div className="main__accomodation__block__tlt__location">
-              <p>{logement.location}</p>
-            </div>
-            {/* Section tags */}
+            <h2 className="main__accomodation__block__tlt__title">
+              {logement.title}
+            </h2>
+            <p className="main__accomodation__block__tlt__location">
+              {logement.location}
+            </p>
+            {/* Tags */}
             <div className="main__accomodation__block__tlt__tags">
               {logement.tags.map((tag, index) => (
                 <span key={index} className="tag">
@@ -116,14 +73,14 @@ function Fiche() {
                       : 'star empty'
                   }
                 >
-                  {index < parseInt(logement.rating) ? '★' : '★'}
-                  {/* ☆ = test sans couleur */}
+                  ★
                 </span>
               ))}
             </div>
           </div>
         </div>
 
+        {/* Sections Toggle: Description & Équipements */}
         <div className="main__accomodation__toggle">
           <div className="main__accomodation__toggle__block">
             <ToggleSection

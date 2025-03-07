@@ -1,27 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AppRouter from './router'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import Home from '@pages/Home/'
-import Fiche from '@pages/Fiche'
-import Infos from '@pages/Infos'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-//import Layout from '@components/Layout'
-import Error from '@components/Error'
 import '@styles/styles.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Fiche/:id" element={<Fiche />} />
-        <Route path="/Infos" element={<Infos />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <AppRouter />
   </StrictMode>,
 )
