@@ -19,26 +19,26 @@ const Slideshow = ({ pictures, title }) => {
   }
 
   return (
-    <div className="main__accomodation__carousel">
+    <div className="main__accommodation__carousel">
       <img
         src={pictures[currentImageIndex]}
         alt={`Photo ${currentImageIndex + 1} de ${title}`}
-        className="main__accomodation__carousel__image"
+        className="main__accommodation__carousel__image"
       />
 
       {pictures.length > 1 && (
         <>
-          <div className="main__accomodation__carousel__counter">
+          <div className="main__accommodation__carousel__counter">
             {currentImageIndex + 1}/{pictures.length}
           </div>
           <button
-            className="main__accomodation__carousel__prev"
+            className="main__accommodation__carousel__prev"
             onClick={prevImage}
           >
             <img className="Chevron Left" src={ChevronL} alt="Chevron Left" />
           </button>
           <button
-            className="main__accomodation__carousel__next"
+            className="main__accommodation__carousel__next"
             onClick={nextImage}
           >
             <img className="Chevron Right" src={ChevronR} alt="Chevron Right" />

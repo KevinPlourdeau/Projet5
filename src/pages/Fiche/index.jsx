@@ -15,7 +15,7 @@ function Fiche() {
     if (foundLogement) {
       setLogement(foundLogement)
     } else {
-      navigate('/error')
+      navigate('*')
     }
   }, [id, navigate])
 
@@ -33,22 +33,22 @@ function Fiche() {
 
   return (
     <section className="main">
-      <div className="main__accomodation">
+      <div className="main__accommodation">
         {/* Slideshow Component */}
         <Slideshow pictures={logement.pictures} title={logement.title} />
 
         {/* Block titre/location + host/rating */}
-        <div className="main__accomodation__block">
+        <div className="main__accommodation__block">
           {/* Section titre + location + tags */}
-          <div className="main__accomodation__block__tlt">
-            <h2 className="main__accomodation__block__tlt__title">
+          <div className="main__accommodation__block__tlt">
+            <h2 className="main__accommodation__block__tlt__title">
               {logement.title}
             </h2>
-            <p className="main__accomodation__block__tlt__location">
+            <p className="main__accommodation__block__tlt__location">
               {logement.location}
             </p>
             {/* Tags */}
-            <div className="main__accomodation__block__tlt__tags">
+            <div className="main__accommodation__block__tlt__tags">
               {logement.tags.map((tag, index) => (
                 <span key={index} className="tag">
                   {tag}
@@ -58,12 +58,12 @@ function Fiche() {
           </div>
 
           {/* Section host + rating */}
-          <div className="main__accomodation__block__ht">
-            <div className="main__accomodation__block__ht__host">
+          <div className="main__accommodation__block__ht">
+            <div className="main__accommodation__block__ht__host">
               <p>{logement.host.name}</p>
               <img src={logement.host.picture} alt={logement.host.name} />
             </div>
-            <div className="main__accomodation__block__ht__rating">
+            <div className="main__accommodation__block__ht__rating">
               {[...Array(5)].map((_, index) => (
                 <span
                   key={index}
@@ -81,8 +81,8 @@ function Fiche() {
         </div>
 
         {/* Sections Toggle: Description & Équipements */}
-        <div className="main__accomodation__toggle">
-          <div className="main__accomodation__toggle__block">
+        <div className="main__accommodation__toggle">
+          <div className="main__accommodation__toggle__block">
             <ToggleSection
               title="Description"
               isActive={activeIndex.includes('description')}
@@ -91,7 +91,7 @@ function Fiche() {
               <p>{logement.description}</p>
             </ToggleSection>
           </div>
-          <div className="main__accomodation__toggle__block">
+          <div className="main__accommodation__toggle__block">
             <ToggleSection
               title="Équipements"
               isActive={activeIndex.includes('equipment')}
